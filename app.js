@@ -75,10 +75,13 @@ function displayGrunt() {
                 }
                 if (grunt.hitPoints === 0){
                     defeatedGrunts++;
+                    defeatedGruntsEl.textContent = (`You have defeated ${defeatedGrunts} Grunts`);
                 }
                 
             }
-                
+            if (characterHP === 0){
+                alert('Master Chief got killed by a Grunt... Depressing!');
+            }
             
             displayGrunt();
         });
