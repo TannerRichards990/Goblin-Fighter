@@ -33,3 +33,57 @@ footer {
     justify-content: flex-end;
     background-color: var(--footer-background);
 }
+
+#character-img{
+    display: flex;
+    background-color: black;
+    justify-content: flex-end;
+    height: 350px;
+    width: 350px;
+    margin: 50px, 0px;
+}
+
+.character{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px;
+}
+
+#grunt-area{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 400px, 0px;
+}
+
+#grunt-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border: 1rem;
+    border-color: red;
+}
+
+#defeated-grunts{
+    display: flex;
+    justify-content: center;
+    border-radius: 30px;
+    border-color: black;
+    padding: 15px;
+    margin: 30px;
+    
+}
+
+form{
+    display: flex;
+    justify-content: center;
+}
+
+button{
+    padding: 20px;
+    background-color: black;
+    color: lightseagreen;
+}
