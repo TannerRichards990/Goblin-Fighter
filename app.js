@@ -37,13 +37,14 @@ formEl.addEventListener('submit', (e) => {
 
     const newGrunt = {
         name: gruntName,
-        hitpoints: 3,
+        hitPoints: 3,
     
     };
 
     gruntList.push(newGrunt);
   
-  
+    formEl.reset();
+    DisplayGrunt();
 });
 
 
@@ -59,10 +60,20 @@ function DisplayGrunt() {
     for (let grunt of gruntList){
         const gruntEl = renderGrunt(grunt);
 
-        // if (grunt.hitPoints === 0){
-
-        // }
-
+        gruntEl.addEventListener('click', () => {
+            if (characterHpEl > 0 && grunt.hitPoints > 0){
+                if (Math.random() > 0.5) {
+                    grunt.hitPoints--;
+                    alert(`BAM! ${grunt.name} got dunked on`);
+                }
+                else {
+                    alert(`You missed ${grunt.name}!`);
+                }
+                
+            }
+            DisplayGrunt();
+        });
+        
         gruntContainerEl.append(gruntEl);
 
     }}

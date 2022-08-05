@@ -45,6 +45,7 @@ footer {
     height: 350px;
     width: 350px;
     margin: 50px, 0px;
+    border: green solid 2px;
 }
 
 .character{
@@ -73,13 +74,14 @@ footer {
 #grunt-area{
     display:flex;
     flex-direction: row;
-    justify-content: center;
-    align-items: flex-end;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
     margin: 10px, 0px;
-    width: 700px;
     position:fixed;
-    right: 300px;
-    top: 400px;
+    right: 30%;
+    top: 30%;
+    width: 650px;
     
     
 }
@@ -132,8 +134,14 @@ button:hover{
 
 .grunt{
     background-color: black;
-    color:aqua;
-    border: red solid 2px;
+    color:red;
+    border: aqua solid 2px;
     margin: 20px;
     text-align: center;
+}
+
+.gruntDeath{
+    width: 120px;
+    height: 120px;
+    background-color: white;
 }
