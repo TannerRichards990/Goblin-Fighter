@@ -10,7 +10,10 @@ body {
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr auto;
-}
+    background-image: url("../assets/halo-background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    }
 
 header {
     position: sticky;
@@ -22,6 +25,7 @@ header {
 
 main {
     padding: 20px;
+    
 }
 
 footer {
@@ -47,25 +51,40 @@ footer {
     display:flex;
     flex-direction: column;
     justify-content: flex-end;
-    align-items: center;
     margin: 20px;
+}
+
+.character p{
+    color: lightseagreen;
+    font-size: 20px;
+    background-color: black;
+    width: 100px;
+    text-align: center;
+}
+
+#character-hp{
+    color: lightseagreen;
+    font-size: 3rem;
+    background-color: black;
+    width: 100px;
+    text-align: center;
 }
 
 #grunt-area{
     display:flex;
     flex-direction: column;
-    justify-content: flex-end;
-    align-items: center;
+    justify-content: center;
+    align-items: flex-end;
     margin: 400px, 0px;
 }
 
-#grunt-area{
+/* #grunt-area{
     display: flex;
     justify-content: center;
     flex-direction: row;
     border: 1rem;
     border-color: red;
-}
+} */
 
 #defeated-grunts{
     display: flex;
@@ -74,16 +93,32 @@ footer {
     border-color: black;
     padding: 15px;
     margin: 30px;
+    font-size: 25px;
+    color: lightseagreen;
+    background-color: black;
     
 }
 
 form{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    margin: 20px;
+    
 }
 
 button{
     padding: 20px;
     background-color: black;
     color: lightseagreen;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.grunt-name{
+    border-radius: 10px;
+    
+}
+button:hover{
+    background-color: deepskyblue;
 }
