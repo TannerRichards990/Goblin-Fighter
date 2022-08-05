@@ -25,7 +25,7 @@ const gruntList = [
         hitPoints: 3,
     }
 ];
-DisplayGrunt();
+displayGrunt();
 
 // set event listeners 
 formEl.addEventListener('submit', (e) => {
@@ -33,18 +33,19 @@ formEl.addEventListener('submit', (e) => {
 
     const data = new FormData(formEl);
     const gruntName = data.get('grunt-name');
-    console.log(gruntName);
-
+    
     const newGrunt = {
         name: gruntName,
-        hitPoints: 3,
+        hitPoints: Math.ceil(Math.random() * 5),
+        
+        
     
     };
 
     gruntList.push(newGrunt);
   
     formEl.reset();
-    DisplayGrunt();
+    displayGrunt();
 });
 
 
@@ -55,23 +56,31 @@ formEl.addEventListener('submit', (e) => {
 
   // update DOM to reflect the new state
 
-function DisplayGrunt() {
+function displayGrunt() {
     gruntContainerEl.textContent = '';
     for (let grunt of gruntList){
         const gruntEl = renderGrunt(grunt);
 
         gruntEl.addEventListener('click', () => {
-            if (characterHpEl > 0 && grunt.hitPoints > 0){
+          
+            if (characterHP > 0 && grunt.hitPoints > 0){
                 if (Math.random() > 0.5) {
                     grunt.hitPoints--;
                     alert(`BAM! ${grunt.name} got dunked on`);
                 }
                 else {
-                    alert(`You missed ${grunt.name}!`);
+                    characterHP--;
+                    alert(`You missed ${grunt.name} and the grunt hit you!`);
+                    characterHpEl.textContent = characterHP;
+                }
+                if (grunt.hitPoints === 0){
+                    defeatedGrunts++;
                 }
                 
             }
-            DisplayGrunt();
+                
+            
+            displayGrunt();
         });
         
         gruntContainerEl.append(gruntEl);
