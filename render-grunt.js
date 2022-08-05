@@ -8,8 +8,8 @@ export function renderGrunt(grunt) {
     const gruntHP = document.createElement('p');
 
     gruntName.textContent = grunt.name;
-    gruntHP.textContent = grunt.healthPoints;
-    gruntGif.src = (grunt.healthPoints >= 0) ? './assets/grunt.gif' : './assets/death.png';
+    gruntHP.textContent = grunt.hitPoints;
+    gruntGif.src = './assets/grunt.gif';
     
     gruntContainer.classList.add('grunt');
     gruntGif.classList.add('./assets/grunt.gif');

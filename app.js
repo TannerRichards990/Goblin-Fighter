@@ -7,6 +7,7 @@ const characterHpEl = document.getElementById('character-hp');
 const gruntContainerEl = document.getElementById('grunt-area');
 const formEl = document.querySelector('form');
 
+
 // let state
 let characterHP = 10;
 let defeatedGrunts = 0;
@@ -17,14 +18,14 @@ const gruntList = [
     },
     {
         name: 'Juicer',
-        hitpoints: 5
+        hitPoints: 3,
     },
     {
         name: 'Tito',
-        hitpoints: 10,
+        hitPoints: 3,
     }
 ];
-
+DisplayGrunt();
 
 // set event listeners 
 formEl.addEventListener('submit', (e) => {
@@ -32,7 +33,7 @@ formEl.addEventListener('submit', (e) => {
 
     const data = new FormData(formEl);
     const gruntName = data.get('grunt-name');
-    console.log(gruntName)
+    console.log(gruntName);
 
     const newGrunt = {
         name: gruntName,
@@ -53,4 +54,16 @@ formEl.addEventListener('submit', (e) => {
 
   // update DOM to reflect the new state
 
-  
+function DisplayGrunt() {
+    gruntContainerEl.textContent = '';
+    for (let grunt of gruntList){
+        const gruntEl = renderGrunt(grunt);
+
+        // if (grunt.hitPoints === 0){
+
+        // }
+
+        gruntContainerEl.append(gruntEl);
+
+    }}
+

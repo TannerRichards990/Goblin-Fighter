@@ -72,10 +72,16 @@ footer {
 
 #grunt-area{
     display:flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: flex-end;
-    margin: 400px, 0px;
+    margin: 10px, 0px;
+    width: 700px;
+    position:fixed;
+    right: 300px;
+    top: 400px;
+    
+    
 }
 
 /* #grunt-area{
@@ -88,7 +94,7 @@ footer {
 
 #defeated-grunts{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     border-radius: 30px;
     border-color: black;
     padding: 15px;
@@ -96,6 +102,7 @@ footer {
     font-size: 25px;
     color: lightseagreen;
     background-color: black;
+    width: 300px;
     
 }
 
@@ -121,4 +128,12 @@ button{
 }
 button:hover{
     background-color: deepskyblue;
+}
+
+.grunt{
+    background-color: black;
+    color:aqua;
+    border: red solid 2px;
+    margin: 20px;
+    text-align: center;
 }
