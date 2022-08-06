@@ -10,7 +10,10 @@ body {
     background: var(--background);
     display: grid;
     grid-template-rows: auto 1fr auto;
-}
+    background-image: url("../assets/halo-background.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    }
 
 header {
     position: sticky;
@@ -22,6 +25,7 @@ header {
 
 main {
     padding: 20px;
+    
 }
 
 footer {
@@ -32,4 +36,112 @@ footer {
     display: flex;
     justify-content: flex-end;
     background-color: var(--footer-background);
+}
+
+#character-img{
+    display: flex;
+    background-color: black;
+    justify-content: flex-end;
+    height: 350px;
+    width: 350px;
+    margin: 50px, 0px;
+    border: green solid 2px;
+}
+
+.character{
+    display:flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin: 20px;
+}
+
+.character p{
+    color: lightseagreen;
+    font-size: 20px;
+    background-color: black;
+    width: 100px;
+    text-align: center;
+}
+
+#character-hp{
+    color: lightseagreen;
+    font-size: 3rem;
+    background-color: black;
+    width: 100px;
+    text-align: center;
+}
+
+#grunt-area{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 10px, 0px;
+    position:fixed;
+    right: 30%;
+    top: 30%;
+    width: 650px;
+    
+    
+}
+
+/* #grunt-area{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border: 1rem;
+    border-color: red;
+} */
+
+#defeated-grunts{
+    display: flex;
+    justify-content: flex-start;
+    border-radius: 30px;
+    border-color: black;
+    padding: 15px;
+    margin: 30px;
+    font-size: 25px;
+    color: lightseagreen;
+    background-color: black;
+    width: 300px;
+    
+}
+
+form{
+    display: flex;
+    justify-content: flex-start;
+    margin: 20px;
+    
+}
+
+button{
+    padding: 20px;
+    background-color: black;
+    color: lightseagreen;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-left: 30px;
+}
+
+.grunt-name{
+    border-radius: 10px;
+    
+}
+button:hover{
+    background-color: deepskyblue;
+}
+
+.grunt{
+    background-color: black;
+    color:red;
+    border: aqua solid 2px;
+    margin: 20px;
+    text-align: center;
+}
+
+.gruntDeath{
+    width: 120px;
+    height: 120px;
+    background-color: white;
 }

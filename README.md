@@ -24,3 +24,38 @@ Additional considerations:
   - What needs to live in a persistence layer?
 - Is there some state we need to initialize?
 - Ask: should any of this work be abstracted into functions? (i.e., is the work complicated? can it be resused?)
+
+
+## HTML:
+input for new grunt.
+button for new grunt.
+div for defeated grunts
+div to display current state of grunts display
+div to display player HP
+div to display character avatar
+
+## State:
+1.)player hp:
+-10 hp at first(state changes when the player gets hit)
+
+2.)number of grunts defeated:
+-initial state is 0(number)
+-state changes after clicking a grunt and knocking their health to zero. GruntsDefeated will change.
+-When grunt dies, this number goes up.
+
+3.)when does the grunts array change?
+-on click of a goblin,
+if the user hits, decrement the goblin's HP by 1
+
+-on submitting a challenge
+add a new goblin to the array.
+
+## Events:
+on challenge submit: 
+add a new grunt to the array
+get the name of the new grunt from the input
+make a new grunt object
+push this object into our grunt array state
+clear out our div of grunts
+loop through our grunts data and render and append each grunt div to the DOM
+as we loop, examine the HP. if the HP is 0, render a flame emojis. otherwise, render a grunt emoji.
