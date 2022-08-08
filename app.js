@@ -43,7 +43,7 @@ formEl.addEventListener('submit', (e) => {
     };
 
     gruntList.push(newGrunt);
-  
+
     formEl.reset();
     displayGrunt();
 });
@@ -60,31 +60,33 @@ function displayGrunt() {
     gruntContainerEl.textContent = '';
     for (let grunt of gruntList){
         const gruntEl = renderGrunt(grunt);
-
-        gruntEl.addEventListener('click', () => {
-          
-            if (characterHP > 0 && grunt.hitPoints > 0){
-                if (Math.random() > 0.5) {
-                    grunt.hitPoints--;
-                    alert(`BAM! ${grunt.name} got dunked on`);
-                }
-                else {
-                    characterHP--;
-                    alert(`You missed ${grunt.name} and the grunt hit you!`);
-                    characterHpEl.textContent = characterHP;
-                }
-                if (grunt.hitPoints === 0){
-                    defeatedGrunts++;
-                    defeatedGruntsEl.textContent = (`You have defeated ${defeatedGrunts} Grunts`);
-                }
-                
-            }
-            if (characterHP === 0){
-                alert('Master Chief got killed by a Grunt... Depressing!');
-            }
+        if (grunt.hitPoints > 0){
             
-            displayGrunt();
-        });
+            gruntEl.addEventListener('click', () => {
+        
+                if (characterHP > 0 && grunt.hitPoints > 0){
+                    if (Math.random() > 0.5) {
+                        grunt.hitPoints--;
+                        alert(`BAM! ${grunt.name} got dunked on`);
+                    }
+                    else {
+                        characterHP--;
+                        alert(`You missed ${grunt.name} and the grunt hit you!`);
+                        characterHpEl.textContent = characterHP;
+                    }
+                    if (grunt.hitPoints === 0){
+                        defeatedGrunts++;
+                        defeatedGruntsEl.textContent = (`You have defeated ${defeatedGrunts} Grunts`);
+                    }
+                
+                }
+                if (characterHP === 0){
+                    alert('Master Chief got killed by a Grunt... Depressing!');
+                }
+            
+                displayGrunt();
+            });
+        }
         
         gruntContainerEl.append(gruntEl);
 
